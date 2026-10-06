@@ -20,7 +20,8 @@ pipeline {
                             -Dsonar.projectKey=Savan-Group-Web \
                             -Dsonar.projectName='Savan Group Web' \
                             -Dsonar.sources=. \
-                            -Dsonar.exclusions=node_modules/**,.next/**"
+                            -Dsonar.exclusions=node_modules/**,.next/** \
+                            -Dsonar.javascript.node.maxspace=2048"
                     }
                 }
             }
