@@ -1,6 +1,10 @@
 pipeline {
     agent any
     
+    tools {
+        nodejs 'node20' // Le dice a Jenkins que instale Node para esta ejecución
+    }
+    
     stages {
         stage('Descargar Código') {
             steps {
@@ -10,10 +14,7 @@ pipeline {
         stage('Análisis de SonarQube') {
             steps {
                 script {
-                    // Llama a la herramienta que configuraste en "Tools"
                     def scannerHome = tool 'sonar-scanner'
-                    
-                    // Llama al servidor que configuraste en "Sistema"
                     withSonarQubeEnv('SonarQube Server') {
                         sh "${scannerHome}/bin/sonar-scanner \
                             -Dsonar.projectKey=Savan-Group-Web \
