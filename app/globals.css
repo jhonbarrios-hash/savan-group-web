@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --color-savan-blue: #0A192F;
   --color-savan-lightBlue: #112240;
   --color-savan-green: #00E5FF;
